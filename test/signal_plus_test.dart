@@ -388,6 +388,12 @@ void main() {
       expect(taps.single.title, 'Early');
     });
 
+    test('a closure cannot be a background handler', () async {
+      final ServiceFailure failure = leftOf(await SignalPlus.onBackgroundMessage((final RemoteMessage _) async {}));
+
+      expect(failure.operation, BackgroundSettings.notTopLevel.operation);
+    });
+
     test('foreground messages reach onMessage listeners', () async {
       final List<RemoteMessage> messages = <RemoteMessage>[];
       listeners.add(SignalPlus.onMessage(messages.add));
@@ -396,12 +402,6 @@ void main() {
       push.events.message(const RemoteMessage(messageId: 'm1'));
 
       expect(messages.single.messageId, 'm1');
-    });
-
-    test('a closure cannot be a background handler', () async {
-      final ServiceFailure failure = leftOf(await SignalPlus.onBackgroundMessage((final RemoteMessage _) async {}));
-
-      expect(failure.operation, BackgroundSettings.notTopLevel.operation);
     });
   });
 

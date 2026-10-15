@@ -10,6 +10,6 @@ The first release of `signalplus`: one static facade, `SignalPlus`, that receive
 * Topics created in the dashboard: `topics`, `recipientTopics`, `subscribe`, `unsubscribe`.
 * `categories()` creates one Android channel per category, before anyone signs in.
 * Taps report `Opened` by themselves; `reportOpened` covers opens you handle yourself.
-* Events: `onMessage`, `onNotificationTap` (including the launch tap) and `onBackgroundMessage`.
+* Events: `onMessage` and `onNotificationTap` (including the launch tap). Notifications that arrive in the background or while the app is closed are shown by the package itself; `onBackgroundMessage` optionally runs your own code for them.
 * The app name and the default channel (`signalplus_default`) are set by the package, named in the app's language.
 * Every call returns `Either<ServiceFailure, T>` and never throws.

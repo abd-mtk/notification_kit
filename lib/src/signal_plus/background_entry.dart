@@ -12,8 +12,6 @@ import '../push/models/push_config.dart';
 
 typedef BackgroundHandler = Future<void> Function(RemoteMessage message);
 
-/// What the background isolate reads from storage: the display config and the
-/// app's handler, saved as a callback handle because closures cannot cross isolates.
 abstract final class BackgroundSettings {
   static const String configKey = 'signalplus.background_config';
   static const String handlerKey = 'signalplus.background_handler';
