@@ -1,0 +1,27 @@
+{
+  "Categories": [
+    {
+      "Key": "Orders",
+      "Name": "الطلبات",
+      "Enabled": true,
+      "Locked": true
+    },
+    {
+      "Key": "Promotions",
+      "Name": "العروض",
+      "Enabled": false,
+      "Locked": false
+    }
+  ],
+  "QuietHours": null,
+  "Rejected": [
+    {
+      "Key": "Orders",
+      "Error": "CategoryLocked"
+    },
+    {
+      "Key": "Nope",
+      "Error": "CategoryUnknown"
+    }
+  ]
+}

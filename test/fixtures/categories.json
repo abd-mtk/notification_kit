@@ -1,0 +1,20 @@
+[
+  {
+    "Key": "Orders",
+    "AndroidChannelId": "orders",
+    "Name": "الطلبات",
+    "Description": "تحديثات الطلب",
+    "Lane": "Critical",
+    "Locked": true,
+    "DefaultEnabled": true
+  },
+  {
+    "Key": "Promotions",
+    "AndroidChannelId": null,
+    "Name": "العروض",
+    "Description": null,
+    "Lane": "Bulk",
+    "Locked": false,
+    "DefaultEnabled": false
+  }
+]
